@@ -72,7 +72,7 @@ C#:
 -Tránh boxing như nào:
 +Dùng List<> thay vì dùng arraylist
 +cẩn thận khi dùng với struct vì dễ dính boxing-
-+ nên Dùng Span<T>, ref struct: sẽ cấp phát bộ nhớ trên stack-> ko bị boxing
++ nên Dùng Span<T>, ref struct: sẽ cấp phát bộ nhớ trên stack-> ko bị boxing. hay còn dùng đẻ ép value type luôn nằm trên stack.
 -Dùng generic để tránh boxing như nào
 +Dùng generic để khi trình biên nó sẽ dùng luôn kiểu dữ liệu T đó chứ ko chuyển sang object nữa(ko boxing nữa)
 Có tác dụng khi T là các kiểu dữ liệu vlaue type sẽ ko bị chuyển sang kiểu object khi thao tác.
@@ -152,5 +152,10 @@ socket,timer, thread
 
 7. Stack và heap
 -Tính chất của 2 vùng nhớ này: cấu trúc tổ chức dữ liệu, tốc độ
--Biến nào trên stack và heap
++Stack: Last in first out, bộ nhớ nhỏ ~1MB/thread, cấp phát nhanh, lưu trũ value type, biến tạm, tham số, quản lý bởi complier & CPU, khi kết húc scope hoặc method thì xóa
++Heap: Dạng phân tán, ko có thứ tự, cấp phát chậm hơn, lưu biến reference type(object, array, class),quản lý bởi GC của .Net, dọn dẹp khi không còn tham chiếu.
+-Biến nào trên stack và heap: 
++tất cả các biến value type năm trên stack:int, float, double, decimal, bool, char, byte, sbyte, short, ushort, long, ulong, DateTime, enum, struct, Guid
++các bến ref nằm trên heap:class, interface, delegate, string, object, array, dynamic
++Note: value type nằm tren heap khi nó là 1 field của một object, boxing sang kiểu object.
 -Tính chất của các biến này khi trên bộ nhớ stack và heap như nào: bị xóa khi nào
