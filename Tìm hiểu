@@ -61,32 +61,52 @@ Toán tử logic: &&, ||, !
 Toán tử gán: =, +=, -=, ...
 
 Ternary (? :), Null-coalescing (??, ??=)
-
+-??: nếu trái null thì dùng phải: x ?? "default"
+-??=:nếu trái null thì gán phải vào: x ??= "default": nếu x null thì x gán bằng "default"
 is, as, typeof, sizeof
+-is: kiểm tra xem có phải kiểu cụ thể ko,
+-as: ép kiểu an toàn ko bắn ra exception, chỉ cho null nếu sai
+-typof: lấy type của object: dùng trong relection
+-sizeof: lấy ra số byte của kiểu dữ liệu
 
 4. Câu lệnh điều kiện & vòng lặp
 if, else if, else
-
 switch, case, default
-
 for, while, do-while, foreach
-
 break, continue, return
-
 5. Mảng và chuỗi
 Mảng một chiều, nhiều chiều, jagged array
 
 Các thao tác trên string: Substring, IndexOf, Split, Replace, Trim, ...
-
-StringBuilder
+-string: immutable là bất 
+-StringBuilder: xử lý chuỗi hiệu quả khi cần  nối nhiều chuỗi, xử lý lặp lại nhiều lần
+  +Không có tạo ra vùng nhớ mới mà làm việc trược tiếp trên vùng nhớ hiện tại
+  +Không thead-safe do là mutable
 
 🟡 II. Lập trình hướng đối tượng (OOP)
 6. Class và Object
 Khai báo class, tạo đối tượng bằng new
 
 Constructor (mặc định, có tham số, static)
-
++static contructor: ko có tham số, ko accessmodifier, ko gọi trực tiếp, chỉ gọi 1 lần khi instance của class dk tạo hoặc có thành viên static khác dk gọi.
+-> dùng khi cần khởi tạo giá trị static ban đầu
 Field, Property, Method
+-Field: là 1 trường khai báo để lưu dữ thông tin, là biến thô, ít kiểm soát
+-Poperty: dùng bao bọc field, kiểm soát việc gán đọc ghi:
+    class Person
+    {
+        private int age;//field
+        private string Name;//field
+        public int Age//property
+        {
+            get { return age; }
+            set
+            {
+                if (value >= 0) age = value;
+            }
+        }
+        public string Name {get;set;}//property-> // compiler tự tạo field ẩn cho name
+    }
 
 7. Tính đóng gói (Encapsulation)
 Access modifiers: public, private, protected, internal, protected internal
