@@ -117,9 +117,18 @@ Kế thừa class (:)
 base keyword
 
 9. Tính đa hình (Polymorphism)
-Ghi đè method (virtual, override)
-
-Nạp chồng method (overload)
+#Ghi đè method (virtual, override)
+  -Xảy ra tại runtime
+  -Xảy ra khi kế thứ, con kế thừa cha và muốn ghi thay đổi hoạt động của một phương thức
+  -Giữ nguyên tên, tham số chỉ thay đổi hành vi
+  -hàm ở cha phải có virtual method, abtract method, ở con dùng override để đánh đâu ghi đè phương thức
+Virtual VS abtract
+-virtual là khái niệm chỉ cho method, đánh đấu method đó có thể được override lại ở class con(tuỳ chọn), vì virtual method có sẵn thân hàm {}> có thể dùng luôn khi ở lớp cha.
+  +virual là của method, method này nằm trong 1 class thường(ko có virtual class)-> có thể khởi tạo đối tường từ lớp cha bình thường như bao class khác.
+-Abtract: abtract method là khai báo method ko có thân hàm{}-nghĩa là chưa impliement j, lớp con bát buộc phải dùng override và triển khai hàm này.
+    +Khi 1 class có ít nhất 1 abtract method thì class đó cũng phải khai báo là abtract class-> ko thể khởi tại đối tượng được
+      -> abtract class chỉ là lớp trừu tượng-định hướng cho các lớp con triển khai cụ thể.
+#Nạp chồng method (overload)
 
 10. Tính trừu tượng (Abstraction)
 Abstract class & method
@@ -128,7 +137,7 @@ Interface
 
 11. Static vs Instance
 Static method, property, class
-
+-Static là thành viên thuộc class chứ ko thuộc về 1 instance nào cụ thể. Gọi trực tiếp từ class ra.
 So sánh với non-static
 
 🔵 III. Cấu trúc nâng cao trong C#
