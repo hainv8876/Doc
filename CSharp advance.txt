@@ -4,8 +4,7 @@ C#:
 	-ref: truyền vào khi muốn thay đổi giá trị, cần gán trước khi truyền
 	-out: truyền vào khi muốn lấy giá trị ra, gấn giá trị trước khi kết thúc hàm.
 	-in: truyền vào để chỉ đọc, ko thể thay đổi giá trị áp dụng cho truyền vào struct lớn
-	vì struct là value type và truyền vào hàm sẽ bị clone ra
-	-> dùng in sẽ ngăn ko cho clone ra, mà sẽ thao tác trước tiếp, đồng đời ko thể thay đổi struct.
+	vì struct là value type và truyền vào hàm sẽ bị clone ra nên dùng in sẽ ngăn ko cho clone ra, mà sẽ thao tác trước tiếp, đồng đời ko thể thay đổi struct.
 2. memcached và resdis cache
 	2.1 Redis:
 	-CSDL key-value dạng in-memory:
@@ -158,3 +157,13 @@ socket,timer, thread
 +tất cả các biến value type năm trên stack:int, float, double, decimal, bool, char, byte, sbyte, short, ushort, long, ulong, DateTime, enum, struct, Guid
 +các bến ref nằm trên heap:class, interface, delegate, string, object, array, dynamic
 +Note: value type nằm tren heap khi nó là 1 field của một object, boxing sang kiểu object.
+------------------------------------------------------------------------------------------
+1. High performance .NET/Memory-optimized programming
+2.Advanced multithreading & concurrency
+3.Dependency injection (DI)& Ioc container
+4.Advanced garbage collection tuning
+5.Roslyn & complie-time programming
+6. Networking &protocol level handling
+7. .net internal & runtinme
+8. Real world system design với .NET
+9. Performance optimization tools
