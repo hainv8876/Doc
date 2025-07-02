@@ -1,0 +1,201 @@
+🟢 I. Ngôn ngữ C# cơ bản
+1. Cấu trúc chương trình C#
+##Main() method
+  -Là điểm bắt đầu của trương trình C#:
+      using System;
+      
+      namespace HelloWorldApp
+      {
+          class Program
+          {
+              static void Main(string[] args)
+              {
+                  Console.WriteLine("Hello, World!");
+              }
+          }
+      }
+-Khai báo trong 1 class;
+-Là 1 hàm static tên Main-> do là static nên ko cần khởi tạo, cứ thế gọi dùng thôi
+-Tham số truyền vào string[] arg, có thể ko có tham số Main(), tham số chỉ có ý nghĩa khi chạy chương trình với command dòng lệnh dotnet arg1 arg2... hoặc cài đặt trong IDE
+-Chỉ cho phép trả về void hoặc int, trả về int để thể hiện mã lỗi thực hiện chương trình-quy ước mã với user
+##using directives:
+  using +<namespace>: sau đó chương trình có thể sử dụng tất cả các thành phần public trong namspace đó: class, interface, struct, enum...
+  mà ko cần gọi tường mình System.XYZ
+
+##Namespace, class
+-Namespace như là thư mục chúa, gom nhóm các class, interface...
+-Class là một khuôn mẫu (template) để tạo ra đối tương, mô hình hóa của một đối tượng cụ thể.
+
+2. Kiểu dữ liệu cơ bản
+##int, float, double, bool, char, string, decimal
+
+##var (kiểu suy luận): trình biện dịch tự suy ra kiểu dữ liệu sau khi gán với giá trị(xác định kiểu tại compile time), phải gán giá trị ngay khi khai báo vì nó là tường mình ko phải dynamic.
+  -Sau khi trình biên dịch dựa vào giá trị mà xác định được kiểu dữ liệu, thì kiểu dữ liệu đó ko thể thay đổi được nữa
+  vd: var x=12; => x là kiểu interger, cố tình gán x="abc" kiểu string-> lỗi vì x đã nhận là kiểu int rồi;
+##dynamic: kiểu dữ liệu được xác định tại runtime, linh hoạt nhưng dễ gây lỗi runtime.
+  Dùng khi xử lý dữ liệu ko biết trước cấu trúc: Json
+
+  using Newtonsoft.Json;
+  string json = "{ \"name\": \"Hai\", \"age\": 25, \"isActive\": true }";
+  dynamic data = JsonConvert.DeserializeObject<dynamic>(json);  
+  // Truy cập trực tiếp mà không cần class
+  Console.WriteLine(data.name);      // "Hai"
+  Console.WriteLine(data.age);       // 25
+  Console.WriteLine(data.isActive);  // true
+  -Tại runtime ko rõ là kiểu dữ liệu ntn, ->Không cần tạo class User vẫn có thể sử dụng được các field nam,age,isActice
+  -Khi chạy có thể gán lại cho nhiều giá trị khác nhau-> cẩn cẩn thận vì khí kiểm soát, ko biết là object như thế nào.
+  -Có thể dùng try-catch để bắt lỗi tránh crash app.
+##Hằng số (const, readonly)
+-Const: phải gán giá trị ngay khi khai báo, ko thể sửa lại giá trị
+  Trình biên dịch sẽ dùng luôn(nhúng luôn) giá trị đó cho vào biên dịch-> phải rebuild lại thì mới thay đổi được
+  => chạy sẽ nhanh hơn biến thường vì dừng giá trị trực tiếp ko thông qua biến nào cả.
+-readonly: Ko nhất thiết phải gán giá trị ngay sau khi khai báo, CHỈ có thể khởi tạo giá trị tại lúc khai báo hoặc ở contructor, sau đó cũng ko thể thay đổi
+
+3. Toán tử
+Toán tử số học: +, -, *, /, %
+
+Toán tử so sánh: ==, !=, >, <, >=, <=
+
+Toán tử logic: &&, ||, !
+
+Toán tử gán: =, +=, -=, ...
+
+Ternary (? :), Null-coalescing (??, ??=)
+
+is, as, typeof, sizeof
+
+4. Câu lệnh điều kiện & vòng lặp
+if, else if, else
+
+switch, case, default
+
+for, while, do-while, foreach
+
+break, continue, return
+
+5. Mảng và chuỗi
+Mảng một chiều, nhiều chiều, jagged array
+
+Các thao tác trên string: Substring, IndexOf, Split, Replace, Trim, ...
+
+StringBuilder
+
+🟡 II. Lập trình hướng đối tượng (OOP)
+6. Class và Object
+Khai báo class, tạo đối tượng bằng new
+
+Constructor (mặc định, có tham số, static)
+
+Field, Property, Method
+
+7. Tính đóng gói (Encapsulation)
+Access modifiers: public, private, protected, internal, protected internal
+
+8. Tính kế thừa (Inheritance)
+Kế thừa class (:)
+
+base keyword
+
+9. Tính đa hình (Polymorphism)
+Ghi đè method (virtual, override)
+
+Nạp chồng method (overload)
+
+10. Tính trừu tượng (Abstraction)
+Abstract class & method
+
+Interface
+
+11. Static vs Instance
+Static method, property, class
+
+So sánh với non-static
+
+🔵 III. Cấu trúc nâng cao trong C#
+12. Struct và Enum
+Khai báo struct
+
+Enum và cách sử dụng
+
+13. Nullable và Null Safety
+Nullable<T> và ?
+
+??, ?., ??=, ! (null-forgiving)
+
+14. Tuple & ValueTuple
+(int, string), truy cập bằng .Item1, hoặc đặt tên
+
+15. Record (C# 9+)
+record vs class
+
+Bất biến (immutable objects)
+
+16. Collections
+List<T>, Dictionary<TKey, TValue>, HashSet<T>, Queue<T>, Stack<T>
+
+foreach duyệt collection
+
+IEnumerable<T> vs ICollection<T> vs IList<T>
+
+🟣 IV. Xử lý ngoại lệ (Exception Handling)
+17. Try-catch-finally
+try, catch, finally
+
+throw exception mới
+
+Các loại exception phổ biến: NullReferenceException, InvalidOperationException, ...
+
+🔴 V. LINQ và Lambda
+18. Lambda expression
+(x) => x * 2
+
+19. LINQ cơ bản
+Where, Select, FirstOrDefault, OrderBy, GroupBy, Count, Any, All
+
+🟤 VI. Delegate & Event
+20. Delegate
+Định nghĩa delegate
+
+Truyền method vào delegate
+
+21. Event
+Đăng ký và phát sự kiện
+
+EventHandler
+
+⚪ VII. Các chủ đề .NET cơ bản
+22. .NET và CLR
+Khái niệm CLR, CTS, CLS
+
+Biên dịch và IL
+
+23. Quản lý bộ nhớ
+Stack vs Heap
+
+Garbage Collector (GC)
+
+24. Attribute và Reflection
+[Obsolete], [Serializable], [Required], custom attribute
+
+Type.GetProperties(), GetCustomAttributes()
+
+25. File I/O cơ bản
+Đọc/Ghi file với File, StreamReader, StreamWriter
+
+26. Datetime và Timer
+DateTime, TimeSpan, Stopwatch, Timer
+
+🔶 VIII. Các công cụ & môi trường
+27. Visual Studio
+Cấu trúc project, solution
+
+Cài đặt NuGet package
+
+28. .NET CLI
+dotnet new, dotnet run, dotnet build, dotnet add package
+
+29. Debugging
+Breakpoint, Watch, Immediate window
+30. System.Text.Json vs Newtonsoft.Json:
+-System.Text.Json: được tích hợp sẵn, hiệu năng cao hơn nhưng ít tùy biến hơn, ko hỗ trợ trực tiếp dynamic(phải dùng Dùng JsonDocument (phức tạp hơn, dạng DOM tương tự XML): code dài và phức tạp hơn)
+-Newtonsoft.Json: cài nuget, có nhiều tùy biến, hỗ trợ kiểu dynamic: gọi ra như object thuận tiện sử dụng.
