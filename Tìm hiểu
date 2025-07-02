@@ -189,11 +189,6 @@ Khái niệm CLR, CTS, CLS
 
 Biên dịch và IL
 
-23. Quản lý bộ nhớ
-Stack vs Heap
-
-Garbage Collector (GC)
-
 24. Attribute và Reflection
 [Obsolete], [Serializable], [Required], custom attribute
 
@@ -205,17 +200,6 @@ Type.GetProperties(), GetCustomAttributes()
 26. Datetime và Timer
 DateTime, TimeSpan, Stopwatch, Timer
 
-🔶 VIII. Các công cụ & môi trường
-27. Visual Studio
-Cấu trúc project, solution
-
-Cài đặt NuGet package
-
-28. .NET CLI
-dotnet new, dotnet run, dotnet build, dotnet add package
-
-29. Debugging
-Breakpoint, Watch, Immediate window
 30. System.Text.Json vs Newtonsoft.Json:
 -System.Text.Json: được tích hợp sẵn, hiệu năng cao hơn nhưng ít tùy biến hơn, ko hỗ trợ trực tiếp dynamic(phải dùng Dùng JsonDocument (phức tạp hơn, dạng DOM tương tự XML): code dài và phức tạp hơn)
 -Newtonsoft.Json: cài nuget, có nhiều tùy biến, hỗ trợ kiểu dynamic: gọi ra như object thuận tiện sử dụng.
