@@ -158,4 +158,3 @@ socket,timer, thread
 +tất cả các biến value type năm trên stack:int, float, double, decimal, bool, char, byte, sbyte, short, ushort, long, ulong, DateTime, enum, struct, Guid
 +các bến ref nằm trên heap:class, interface, delegate, string, object, array, dynamic
 +Note: value type nằm tren heap khi nó là 1 field của một object, boxing sang kiểu object.
--Tính chất của các biến này khi trên bộ nhớ stack và heap như nào: bị xóa khi nào
