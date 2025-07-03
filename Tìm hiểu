@@ -139,6 +139,7 @@ Interface
 Static method, property, class
 -Static là thành viên thuộc class chứ ko thuộc về 1 instance nào cụ thể. Gọi trực tiếp từ class ra.
 So sánh với non-static
+  +no-static là thành phần thuộc về instance. sau khi tạo instance thì mới sử dụng dk, và sử dụng cùng với instance.
 
 🔵 III. Cấu trúc nâng cao trong C#
 12. Struct và Enum
@@ -152,10 +153,39 @@ Nullable<T> và ?
 ??, ?., ??=, ! (null-forgiving)
 
 14. Tuple & ValueTuple
+-Tuple vs ValueTuple: phân tử giúp trả về nhiều giá trị từ method hoặc lưu trữ nhóm dữ liệu tạm tời mà ko cần định nghĩa class.
+  Khác với class và struct ở chỗ khi nuốm dữ liệu logic riêng và tổ chức rõ ràng
+  +Tuple là cũ hơn -immutable, lưu trên heap vì có cấu trúc là class, ko thể đặt thên, truy cập bằng .Item1, .Item2
+    +Immutable vì chúng chỉ cho phép đọc các giá trị .item1, .item2 chứ ko cho thay đổi-> lưu dữ liệu ko thể thay đổi được.
+  +ValuTuple là mới hơn-mutable, lưu trên stack vì có cấu trúc dữ liệu là struct, có thể đặt tên, truy cập bằng .Item1;.Item2 hoặc tên đặt
+    -> tạm giữ dữ liệu có thể thay đổi được
 (int, string), truy cập bằng .Item1, hoặc đặt tên
 
 15. Record (C# 9+)
-record vs class
+-record vs class: Cùng là kiểu tham chiếu, đều có field, property, method, dùng từ kháo new để tạo instance, có contructor
+- class: dùng cho các object có các hành vi phức tạp
+  + Só anh object là so sánh địa chỉ với nhau-> cùng địa chỉ thì mới là bằng nhau.
+  + ko hỗ trợ clone(with)
+-recode sinh là để:
+  + xử lý dữ liệu bất biến, đã đươc override sẵn Equals()-so sánh field, == operator so sánh nội dung, with-tạo bản clone
+  +bản chất vẫn là giứ liệu ref, và Lưu dữ liệu trong heap giống class
+  + hỗ trợ so sánh theo giá trị thay vì địa chỉ
+  + hỗ trợ clone(with)
+          var p1 = new Person("Hai", 25);
+          var p2 = p1 with { Age = 30 };
+          Console.WriteLine(p2); // Person { Name = Hai, Age = 30 }, tạo ra person mới có tuổi khác với person cũ
+  +  Hỗ trợ mặc đình là bất biến khi khai báo dùng init hoặc positional. còn khi khai báo giống class thì là mutable
+      public record User(string Name, int Age);//bất biến, khai báo kiểu positional ngắn gọn hơn khi dùng init
+      public string Name { get; init; }//bất biến, chỉ có thể gán giá trị 1 lần
+      public int Age { get; init; }//bất biến, chỉ có thể gán giá trị 1 lần
+      
+      public record User
+      {
+          public string Name { get; set; }  // mutable!
+      }
+
+  + hữu ích DTO: do DTO ko nên bị thay đổi sau khi tạo chỉ là gói dữ liệu rồi truyền đi, truyền dữ liệu giữa các tầng, mô hình dữ liệu
+- record struct là 1 valuetype và lưu trên stack-> ko bất biến mặc định
 
 Bất biến (immutable objects)
 
