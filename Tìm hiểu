@@ -132,7 +132,7 @@ Virtual VS abtract
 
 10. Tính trừu tượng (Abstraction)
 Abstract class & method
-
+  -CHỉ thể hiện ra nghiệp vụ chính, ko thể hiện xử lý logic phức tạp
 Interface
 
 11. Static vs Instance
@@ -164,11 +164,11 @@ Nullable<T> và ?
 15. Record (C# 9+)
 -record vs class: Cùng là kiểu tham chiếu, đều có field, property, method, dùng từ kháo new để tạo instance, có contructor
 - class: dùng cho các object có các hành vi phức tạp
-  + Só anh object là so sánh địa chỉ với nhau-> cùng địa chỉ thì mới là bằng nhau.
+  + So sánh object là so sánh địa chỉ với nhau-> cùng địa chỉ thì mới là bằng nhau.
   + ko hỗ trợ clone(with)
 -recode sinh là để:
   + xử lý dữ liệu bất biến, đã đươc override sẵn Equals()-so sánh field, == operator so sánh nội dung, with-tạo bản clone
-  +bản chất vẫn là giứ liệu ref, và Lưu dữ liệu trong heap giống class
+  +bản chất vẫn là lưu liệu ref, và Lưu dữ liệu trong heap giống class
   + hỗ trợ so sánh theo giá trị thay vì địa chỉ
   + hỗ trợ clone(with)
           var p1 = new Person("Hai", 25);
@@ -195,7 +195,35 @@ List<T>, Dictionary<TKey, TValue>, HashSet<T>, Queue<T>, Stack<T>
 foreach duyệt collection
 
 IEnumerable<T> vs ICollection<T> vs IList<T>
+public interface IEnumerable<out T>
+{
+    IEnumerator<T> GetEnumerator();
+}
 
+Là cha đẻ của mọi loại tập hợp trong C#, dùng để duyệt phẩn tử, ko có chức năng nào khác
+-Có sẵn dữ liệu hoặc chỉ là câu truy vấn chưa có dữ liệu trên RAM. phải .ToList() thì mới có dữ liệu trên RAM
+public interface ICollection<T> : IEnumerable<T>
+{
+    int Count { get; }
+    bool IsReadOnly { get; }
+    void Add(T item);
+    bool Remove(T item);
+    void Clear();
+    bool Contains(T item);
+    void CopyTo(T[] array, int arrayIndex);
+}
+-Kế thừa từ cha đẻ IEnumable<T> và cung cấp thêm một số tính năng: thêm/sửa/xóa/, làm abtract cho các list
+
+public interface IList<T> : ICollection<T>
+{
+    T this[int index] { get; set; }
+    int IndexOf(T item);
+    void Insert(int index, T item);
+    void RemoveAt(int index);
+}
+-Là con của ICollection<T> và thêm các tính năng: chỉ số, truy cập chèn/sửa/xóa theo chỉ số
+IQueryable<T>:Dịch câu linq sang SQL, mà chưa tải dữ liệu ngay, phải dùng Tolist thì mới lấy dữ liệu
+IEnumerable<T>: ko dịch linq sang SQL, nếu tolist sớm sẽ lấy hết dữ liệu ra RAM đẻ xử lý
 🟣 IV. Xử lý ngoại lệ (Exception Handling)
 17. Try-catch-finally
 try, catch, finally
@@ -225,8 +253,22 @@ EventHandler
 ⚪ VII. Các chủ đề .NET cơ bản
 22. .NET và CLR
 Khái niệm CLR, CTS, CLS
-
-Biên dịch và IL
+-CLR: Common language runtime: quản lý bộ nhớ, thread/task, ngoại lệ, 
+Biên dịch và IL:Mã trung gian sau khi biên dịch
+1. C# source code (.cs)
+         |
+         V
+2. Compiler (csc.exe)
+         |
+         V
+3. IL code (.dll, .exe)
+         |
+         V
+4. CLR thực thi
+    → JIT dịch IL sang mã máy
+         |
+         V
+5. Ứng dụng chạy trên Windows/Linux/Mac
 
 24. Attribute và Reflection
 [Obsolete], [Serializable], [Required], custom attribute
