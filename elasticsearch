@@ -1,0 +1,20 @@
+ElasticSearch:
+1.Định nghĩa:
+  -Cluster: là 1 tập hợp các node trong hệ thống kết nối với nhau để làm việc thống nhất
+    Chia sẻ xử lý, tìm kiếm giữa các node-> tăng hiệu suất và mở rộng
+  -Node: tương ứng với 1 máy chủ, 1 instance của elasticsearch. chứa các shard của dữ liệu, các node liên kết với nhau để chia sẻ dữ liệu, xử lý truy vấn và tìm kiếm
+  -Index: tương ứng với bảng trong csdl
+  -Shard: phân mảng của index, mỗi shard chứa 1 phần
+  -replica: bản sao của shard, lưu trữ  trên các node khác nhau ko cùng với nơi shard gốc để-> tăng tính sẵn sàng về dữ liệu
+  -Documnet: tươn ứng với 1 row trong bảng csdl
+  -Field: tương ứng với 1 column trong document
+2.Hoạt động:
+  -Lưu dữ liệu trên đĩa cứng đồng thời kết hợp với RAM để tăng tốc trong truy vấn tìm kiếm
+  -Khi reset server thì dữ liệu không bị mất
+  -Đồng bộ với server backend:
+  +Cơ chế: logstasg, beats. dunhg middleware hoặc api endpoint từ backend
+ví dụ: backend thực hiện thay đổi giá trong DB, và gửi thông gin tới elastichsearch qua API
+        +elasticsearch hash documentID để xác định shard và node
+        +xác định node và shard-> cập nhập dữ liệu-> cập nhập replica của shard đó.
+(hashing documentID): dùng thuật toán hash(MD5;SHA-1) để băm documentID ra 1 hashvalue, rồi từ đó thực hiện việc chia dữ liệu vào các shard.
+-> việc tìm kiếm  tới shard sẽ nhanh hơn khi cần
