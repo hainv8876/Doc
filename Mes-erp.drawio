@@ -4,6 +4,9 @@
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="T0aeLHLOD08y2RY99zy8-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="r_bqWtndOqf1YVsXn3kx-1" target="T0aeLHLOD08y2RY99zy8-14">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
         <mxCell id="r_bqWtndOqf1YVsXn3kx-1" value="Kho" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" parent="1" vertex="1">
           <mxGeometry x="135" y="380" width="60" height="80" as="geometry" />
         </mxCell>
@@ -53,6 +56,39 @@
         </mxCell>
         <mxCell id="T0aeLHLOD08y2RY99zy8-3" value="Product BOM" style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;" vertex="1" parent="1">
           <mxGeometry x="-760" y="410" width="155" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-4" value="Công đoạn" style="swimlane;fontStyle=0;childLayout=stackLayout;horizontal=1;startSize=26;fillColor=none;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="750" width="90" height="260" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-5" value="30: SMT-A" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="26" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-6" value="31: AVK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="52" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-7" value="32: SMT -B" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="78" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-8" value="34: JVK" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="104" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-9" value="37: DIP" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="130" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-10" value="38: ASSY" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="156" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-11" value="40: FCT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="182" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-12" value="64: ICT" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="208" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-13" value="70: Đóng gói" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="T0aeLHLOD08y2RY99zy8-4">
+          <mxGeometry y="234" width="90" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="T0aeLHLOD08y2RY99zy8-14" value="Kanban tiến độ bắn nhập linh kiện đầu vào" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="250" y="390" width="140" height="60" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
