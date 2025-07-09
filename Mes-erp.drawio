@@ -187,7 +187,7 @@
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-49" value="Cần cắm AI" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rcoLpioUdL9gj0dhg5Ws-34" target="rcoLpioUdL9gj0dhg5Ws-48">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="rcoLpioUdL9gj0dhg5Ws-34" value="Kitting NVL" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;dashed=1;width=141;height=20;" vertex="1" parent="1">
+        <mxCell id="rcoLpioUdL9gj0dhg5Ws-34" value="Kitting NVL" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;dashed=1;width=141;height=20;fontStyle=1" vertex="1" parent="1">
           <mxGeometry x="-250" y="710" width="840" height="400" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-38" value="vd: Bản mạch PCB cần in phun tem, mã&lt;br&gt;-IC cần nạp chương trình&lt;br&gt;-LK cần cắt chân" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
@@ -275,7 +275,7 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-75" value="Chương trình kiểm tra đã qua các công đoạn trước" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-31" y="2440" width="120" height="60" as="geometry" />
+          <mxGeometry x="-38" y="2440" width="135" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-79" value="Mỗi feeder có 2 rãnh L R&amp;gt; Ứng 2 mã QR&lt;br&gt;-Liên kết này để verify vị trí lk cài trên máy với chương trình đã up trên MES" style="text;html=1;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="244.5" y="1420" width="345.5" height="60" as="geometry" />
@@ -290,7 +290,7 @@
           <mxGeometry x="109.5" y="1300" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-85" value="Kho thành phẩm" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;" vertex="1" parent="1">
-          <mxGeometry x="172" y="2940" width="75" height="80" as="geometry" />
+          <mxGeometry x="159" y="2919" width="75" height="80" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-87" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="rcoLpioUdL9gj0dhg5Ws-61">
           <mxGeometry relative="1" as="geometry">
@@ -310,25 +310,25 @@
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-91" value="Chờ nhập kho" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="150" y="2790" width="120" height="60" as="geometry" />
+          <mxGeometry x="150" y="2790" width="92" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-93" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="rcoLpioUdL9gj0dhg5Ws-91" target="rcoLpioUdL9gj0dhg5Ws-85">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-94" value="Kanban thông tin nhập kho:&lt;br&gt;Tổng số cần nhận, đã nhập, chưa nhập" style="rounded=1;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="320" y="2787" width="245" height="65" as="geometry" />
+          <mxGeometry x="287" y="2787" width="245" height="65" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-96" value="Kiểm tra, trả về công đoạn phù hợp" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
-          <mxGeometry x="-289" y="2791" width="120" height="60" as="geometry" />
+          <mxGeometry x="-247" y="2791" width="120" height="60" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-98" value="PDA" style="verticalLabelPosition=bottom;html=1;verticalAlign=top;align=center;strokeColor=none;fillColor=#00BEF2;shape=mxgraph.azure.mobile_services;pointerEvents=1;movable=1;resizable=1;rotatable=1;deletable=1;editable=1;locked=0;connectable=1;" vertex="1" parent="1">
-          <mxGeometry x="217.5" y="2860" width="20" height="30" as="geometry" />
+          <mxGeometry x="200" y="2853" width="20" height="30" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-99" value="Tiến độ" style="fontColor=#0066CC;verticalAlign=top;verticalLabelPosition=bottom;labelPosition=center;align=center;html=1;outlineConnect=0;fillColor=#CCCCCC;strokeColor=#6881B3;gradientColor=none;gradientDirection=north;strokeWidth=2;shape=mxgraph.networks.video_projector_screen;" vertex="1" parent="1">
           <mxGeometry x="-196" y="2419.5" width="80" height="100" as="geometry" />
         </mxCell>
-        <mxCell id="rcoLpioUdL9gj0dhg5Ws-101" value="Sản xuất" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;dashed=1;width=141;height=20;" vertex="1" parent="1">
-          <mxGeometry x="-243" y="1220" width="840" height="1510" as="geometry" />
+        <mxCell id="rcoLpioUdL9gj0dhg5Ws-101" value="Sản xuất" style="shape=umlFrame;whiteSpace=wrap;html=1;pointerEvents=0;dashed=1;width=141;height=20;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="-250" y="1172" width="847" height="1558" as="geometry" />
         </mxCell>
         <mxCell id="rcoLpioUdL9gj0dhg5Ws-102" value="+Xanh lá: Đang chạy&lt;br&gt;+Màu xanh dương: Chờ trước, đợi để vào làm&lt;br&gt;+Xanh nhạt :Đợi sau: làm xong r đợi ra&lt;br&gt;+Vàng: Khác&lt;br&gt;+Đỏ: Lỗi-dừng&lt;br&gt;------------------------&lt;br&gt;+Tỉ lệ hút lỗi" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" vertex="1" parent="1">
           <mxGeometry x="298" y="1650" width="260" height="119" as="geometry" />
